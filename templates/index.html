@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="container">
+        <div class="visor">{{ resultado }}</div>
+
+        <form action="/" method="post">
+            <input type="hidden" name="memoria" value="{{ resultado }}">
+            
+            <div class="botoes">
+                <button type="submit" name="botao" value="²">x²</button>
+                <button type="submit" name="botao" value="√">√x</button>
+                <button type="submit" name="botao" value="X">⌫</button>
+                <button type="submit" name="botao" value="+">+</button>
+
+                <button type="submit" name="botao" value="1">1</button>
+                <button type="submit" name="botao" value="2">2</button>
+                <button type="submit" name="botao" value="3">3</button>
+                <button type="submit" name="botao" value="-">-</button>
+
+                <button type="submit" name="botao" value="4">4</button>
+                <button type="submit" name="botao" value="5">5</button>
+                <button type="submit" name="botao" value="6">6</button>
+                <button type="submit" name="botao" value="•">x</button>
+
+                <button type="submit" name="botao" value="7">7</button>
+                <button type="submit" name="botao" value="8">8</button>
+                <button type="submit" name="botao" value="9">9</button>
+                <button type="submit" name="botao" value="÷">÷</button>
+
+                <button type="submit" name="botao" value="C">C</button>
+                <button type="submit" name="botao" value="0">0</button>
+                <button type="submit" name="botao" value=",">,</button>
+                <button type="submit" name="botao" value="=">=</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const navigationEntry = performance.getEntriesByType('navigation')[0]
+
+        window.onload = function() {
+            if (navigationEntry.type === 'reload') {
+                document.querySelector('.visor').innerText = '';
+                document.querySelector('input[name="memoria"]').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

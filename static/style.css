@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.container {
+    background-color: #0a1931;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.6), 
+    -9px -9px 16px rgba(0, 0, 0, 0.5);
+    width: 320px;
+}
+
+.visor {
+    width: 100%;
+    height: 80px;
+    background-color: #e0e5ec;
+    border-radius: 15px;
+    box-shadow: inset -6px -6px 10px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    font-size: 2rem;
+    color: #444;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #18498f;
+    cursor: pointer;
+    box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.8);
+    
+    transition: all 0.1s ease;
+}
+
+button:hover {
+    background-color: #163d73;
+}
+
+button:active {
+    box-shadow: inset 4px 4px 6px 0 rgba(0, 0, 0, 0.8);
+    transform: translateY(1px);
+}
+
+button[value="="] {
+    background-color: #288830;
+    color: white;
+}
+
+button[value="C"] {
+    background-color: #96271f;
+    color: white;
+}
+
+button[value="÷"], 
+button[value="•"], 
+button[value="-"], 
+button[value="+"],
+button[value="²"],
+button[value="√"] {
+    color: #f6ff00;
+}
